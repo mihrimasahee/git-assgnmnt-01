@@ -1,0 +1,110 @@
+43667@sahee43667 MINGW64 ~ (master)
+$ mkdir git_assgnmnt_01
+
+43667@sahee43667 MINGW64 ~ (master)
+$ cd git_assgnmnt_01
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git init
+Initialized empty Git repository in C:/Users/43667/git_assgnmnt_01/.git/
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ echo "Git Assignment 01" > README.md
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git commit -m "First commit with README"
+[master (root-commit) 812805d] First commit with README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git remote add origin https://github.com/mihrimasahee/git-assgnmnt-01.git
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git remote -v
+origin  https://github.com/mihrimasahee/git-assgnmnt-01.git (fetch)
+origin  https://github.com/mihrimasahee/git-assgnmnt-01.git (push)
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (master)
+$ git branch -M main
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 241 bytes | 80.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/mihrimasahee/git-assgnmnt-01.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (main)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ echo "Want to be a Devops Engineer" > hello.txt
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ git commit -m "Added hello.txt file"
+[dev c2501c7] Added hello.txt file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ git push -u origin dev
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 102.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/mihrimasahee/git-assgnmnt-01/pull/new/dev
+remote:
+To https://github.com/mihrimasahee/git-assgnmnt-01.git
+ * [new branch]      dev -> dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ git branch -a
+* dev
+  main
+  remotes/origin/dev
+  remotes/origin/main
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (main)
+$ git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 899 bytes | 74.00 KiB/s, done.
+From https://github.com/mihrimasahee/git-assgnmnt-01
+ * branch            main       -> FETCH_HEAD
+   812805d..15b2486  main       -> origin/main
+Updating 812805d..15b2486
+Fast-forward
+ hello.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+43667@sahee43667 MINGW64 ~/git_assgnmnt_01 (main)
+$ ls
+README.md  hello.txt
+
